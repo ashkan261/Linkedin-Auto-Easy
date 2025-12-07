@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Linkedin Auto Easy",
+  "version": "6.0",
+  "description": "Auto unfollow, ad block, suggestion block and Persian lock for Linkedin feed.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.linkedin.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Linkedin Auto Easy"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/feed/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "author": "Ashkan MahinFallah"
+}

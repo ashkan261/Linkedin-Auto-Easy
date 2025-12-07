@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Linkedin Auto Easy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="lae-container">
+    <h1 class="lae-title">Linkedin Auto Easy</h1>
+
+    <!-- Main controls -->
+    <div class="lae-card">
+      <div class="lae-controls">
+        <button id="startBtn" class="lae-btn lae-btn-start">START</button>
+        <button id="stopBtn"  class="lae-btn lae-btn-stop" disabled>STOP</button>
+      </div>
+
+      <div class="lae-counter-row">
+        <span class="lae-counter-label">Unfollow:</span>
+        <span id="unfollowCount" class="lae-counter-value">0</span>
+      </div>
+      <div class="lae-counter-row">
+        <span class="lae-counter-label">Hidden (X):</span>
+        <span id="hideCount" class="lae-counter-value">0</span>
+      </div>
+      <div class="lae-counter-row">
+        <span class="lae-counter-label">Total actions:</span>
+        <span id="totalCount" class="lae-counter-value">0</span>
+      </div>
+    </div>
+
+    <!-- Toggles -->
+    <div class="lae-card">
+      <div class="lae-section-title">Filters</div>
+      <div class="lae-toggle-group">
+        <button id="adBlockBtn" class="lae-btn-toggle">
+          Ad Block
+          <span id="adBlockTick" class="lae-tick"></span>
+        </button>
+        <button id="suggestBlockBtn" class="lae-btn-toggle">
+          Suggestions
+          <span id="suggestBlockTick" class="lae-tick"></span>
+        </button>
+        <button id="persianLockBtn" class="lae-btn-toggle">
+          پارسی لاک
+          <span id="persianLockTick" class="lae-tick"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Advanced settings -->
+    <div class="lae-card">
+      <div class="lae-section-title">Advanced settings</div>
+
+      <div class="lae-setting-row">
+        <label for="scrollDelayRange" class="lae-setting-label">
+          Scroll Delay (seconds)
+        </label>
+        <div class="lae-slider-row">
+          <input type="range" id="scrollDelayRange" min="1" max="120" step="1">
+          <span id="scrollDelayValue" class="lae-slider-value">10s</span>
+        </div>
+      </div>
+
+      <div class="lae-setting-row">
+        <label for="refreshActionsRange" class="lae-setting-label">
+          Refresh Before X Action
+        </label>
+        <div class="lae-slider-row">
+          <input type="range" id="refreshActionsRange" min="0" max="50" step="1">
+          <span id="refreshActionsValue" class="lae-slider-value">0</span>
+        </div>
+        <div class="lae-subtext">
+          0 = disabled (no auto refresh)
+        </div>
+      </div>
+
+      <!-- NEW: HUMANITIZE MODE CHECKBOX -->
+      <div class="lae-setting-row">
+        <label class="lae-filter-row">
+          <input type="checkbox" id="humanizeMode">
+          <span>Human-behavior mode</span>
+        </label>
+        <div class="lae-subtext">
+          Adds random delay, jitter click & random pauses.
+        </div>
+      </div>
+    </div>
+
+    <!-- Keyword filter -->
+    <div class="lae-card">
+      <div class="lae-section-title">Keyword filter</div>
+      <label class="lae-filter-row">
+        <input type="checkbox" id="filterEnabled">
+        <span>Enable keyword filter</span>
+      </label>
+      <input type="text" id="filterKeyword" class="lae-input" placeholder="e.g. nano, exosome, cancer">
+      <div class="lae-subtext">
+        Only posts containing this keyword will remain. Others will be closed (X). The extension will auto-scroll until ~10 matching posts are shown.
+      </div>
+    </div>
+
+    <div id="networkWarningBox" class="lae-alert" style="display:none;">
+      <div class="lae-alert-icon">!</div>
+      <div class="lae-alert-text">
+        LinkedIn has detected automated activity. Please try again later.
+      </div>
+    </div>
+
+    <div class="lae-links">
+      <a href="https://github.com/ashkan261" target="_blank">Author</a>
+      <span>·</span>
+      <a href="https://www.linkedin.com/feed/" target="_blank">Feed page</a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

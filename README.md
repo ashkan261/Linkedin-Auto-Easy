@@ -1,4 +1,7 @@
 # Linkedin Auto Easy – V7
+<p align="center">
+  <img src="https://github.com/ashkan261/Linkedin-Auto-Easy/blob/main/linkeddin-auto-post.png" width="800">
+</p>
 
 A lightweight Chrome extension that automates common LinkedIn feed actions such as unfollowing, hiding suggested posts, blocking ads, filtering Persian content, and applying human-like behavior patterns.  
 The extension also supports keyword-based feed filtering and customizable scrolling/refresh logic.
